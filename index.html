@@ -10,22 +10,67 @@
 </head>
 <body>
 
+<div class="conatiner"> 
+
+    <div class="panel-group">
+      <div class="panel panel-primary class">
+        <div class="panel-heading">Current Train Schedule</div>
+        <div class="panel-body">
+          <table class="table-bordered">
+            <tr>
+              <td>Train Name</td>
+              <td>Destination</td>
+              <td>Frequency (min)</td>
+              <td>Next Arrival</td>
+              <td>Minutes Away</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+  <div class="panel panel-primary class">
+    <div class="panel-heading">Add a Train</div>
+    <div class="panel-body">
+      <form>
+        <div class="form-group">
+          <label for="exampleTextarea">Train Name</label>
+          <textarea class="form-control" id="exampleTextarea" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Destination</label>
+          <textarea class="form-control" id="exampleTextarea" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">First Train Time(HH:mm- military time</label>
+          <textarea class="form-control" id="exampleTextarea" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleTextarea">Frequency (min)</label>
+          <textarea class="form-control" id="exampleTextarea" rows="1"></textarea>
+        </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
 
 <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBCeFQkGprmcSSXWuVh9Og-TNtXkTnVZWE",
-    authDomain: "rps-multiplayer-a17d3.firebaseapp.com",
-    databaseURL: "https://rps-multiplayer-a17d3.firebaseio.com",
-    storageBucket: "rps-multiplayer-a17d3.appspot.com",
-    messagingSenderId: "535836495445"
+    apiKey: "AIzaSyBA_iU71YyDuJjAj-RbOkw1FfhTzCHCUxQ",
+    authDomain: "trainscheduler-65563.firebaseapp.com",
+    databaseURL: "https://trainscheduler-65563.firebaseio.com",
+    storageBucket: "trainscheduler-65563.appspot.com",
+    messagingSenderId: "11975148"
   };
   firebase.initializeApp(config);
 </script>
 
   <script src="https://code.jquery.com/jquery.js"></script>
 
-  <script src="javascript/app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
