@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RPS-multiplayer</title>
- 
+  <title>Trainscheduler</title>
+
+ <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
 
-  <link rel="stylesheet" type="text/css" href="assets/style.css">
+<link rel="stylesheet" type="text/css" href="assets/style.css">
 
 </head>
 <body>
 
-<div class="conatiner"> 
+<div class="container"> 
 
-    <div class="panel-group">
+  <div class="row">
+    <div class="jumbotron">
+      <h1 class="display-3">Trian Scheduler</h1>
+      <p class="lead">This is a description of what the train scheduler can do.</p>
+      <hr class="my-2">
+     </div> 
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
       <div class="panel panel-primary class">
         <div class="panel-heading">Current Train Schedule</div>
         <div class="panel-body">
@@ -24,53 +35,47 @@
               <td>Next Arrival</td>
               <td>Minutes Away</td>
             </tr>
+            <tr id="display">
+              
+            </tr>
           </table>
         </div>
       </div>
-
-  <div class="panel panel-primary class">
-    <div class="panel-heading">Add a Train</div>
-    <div class="panel-body">
-      <form>
-        <div class="form-group">
-          <label for="exampleTextarea">Train Name</label>
-          <textarea class="form-control" id="exampleTextarea" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="exampleTextarea">Destination</label>
-          <textarea class="form-control" id="exampleTextarea" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="exampleTextarea">First Train Time(HH:mm- military time</label>
-          <textarea class="form-control" id="exampleTextarea" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="exampleTextarea">Frequency (min)</label>
-          <textarea class="form-control" id="exampleTextarea" rows="1"></textarea>
-        </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
     </div>
+
+    <div class="col-lg-6">
+      <div class="panel panel-primary class">
+        <div class="panel-heading">Add a Train</div>
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleTextarea">Train Name</label>
+              <textarea class="form-control" id="nameinput" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">Destination</label>
+              <textarea class="form-control" id="destinationinput" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">First Train Time(HH:mm- military time)</label>
+              <textarea class="form-control" id="firsttimeinput" rows="1"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleTextarea">Frequency (min)</label>
+              <textarea class="form-control" id="frequencyinput" rows="1"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>  
+      </div>
+    </div>  
   </div>
-</div>
+
 </div>
 
-<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBA_iU71YyDuJjAj-RbOkw1FfhTzCHCUxQ",
-    authDomain: "trainscheduler-65563.firebaseapp.com",
-    databaseURL: "https://trainscheduler-65563.firebaseio.com",
-    storageBucket: "trainscheduler-65563.appspot.com",
-    messagingSenderId: "11975148"
-  };
-  firebase.initializeApp(config);
-</script>
 
   <script src="https://code.jquery.com/jquery.js"></script>
 
-  <script src="app.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
