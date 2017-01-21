@@ -30,7 +30,7 @@
       <div class="panel panel-primary class">
         <div class="panel-heading">Current Train Schedule</div>
         <div class="panel-body">
-          <table class="table-bordered">
+          <table class="table-bordered" id="display">
             <tr>
               <td>Train Name</td>
               <td>Destination</td>
@@ -38,9 +38,7 @@
               <td>Next Arrival</td>
               <td>Minutes Away</td>
             </tr>
-            <div id="display">
-              
-            </div>
+           
           </table>
         </div>
       </div>
@@ -66,10 +64,6 @@
             <div class="form-group">
               <label for="exampleTextarea">Frequency (min)</label>
               <textarea class="form-control" id="frequencyinput" rows="1"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="exampleTextarea">Minutes Away (min)</label>
-              <textarea class="form-control" id="minutesinput" rows="1"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" id="submit">Submit</button>
           </form>

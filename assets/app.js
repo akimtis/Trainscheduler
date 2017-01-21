@@ -13,7 +13,7 @@
   var destination = "";
   var frequency = "";
   var arrivalTime = "";
-  var minutesAway = "";
+  var minutesAway = arrivalTime-frequency;
 
 
  firebase.database().ref().on("value", function(snapshot){
@@ -24,14 +24,12 @@
     destination = $('#destinationinput').val().trim();
     frequency = $('#frequencyinput').val().trim();
     arrivalTime = $('#firsttimeinput').val().trim();
-    minutesAway = $('#minutesinput').val().trim();
   
     firebase.database().ref().push({
       trainName: trainName,
       destination: destination,
       frequency: frequency,
       arrivalTime: arrivalTime,
-      minutesAway: minutesAway,
       dateAdded: firebase.database.ServerValue.TIMESTAMP,
     });
 
@@ -45,13 +43,12 @@
     console.log(snapshot.val().arrivalTime);
     console.log(snapshot.val().minutesAway);
     
-    // Change the HTML to reflect
-    $("#name-display").html(snapshot.val().name);
-    $("#email-display").html(snapshot.val().email);
-    $("#age-display").html(snapshot.val().age);
-    $("#comment-display").html(snapshot.val().comment);
+    $("#display").append('<tr id="display-item">'+'<tr>');
+    $("#display-item").append('<td>'+snapshot.val().trainName+'</td>');
+    $("#display-item").append('<td>'+snapshot.val().destination+'</td>');
+    $("#display-item").append('<td>'+snapshot.val().frequency+'</td>');
+    $("#display-item").append('<td>'+snapshot.val().arrivalTime+'</td>');
+    $("#display-item").append('<td>'+minutesAway+'</td>');
+  })
 
-    })
-
-  // $(#display).html(<td>)
 
