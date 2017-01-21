@@ -16,29 +16,42 @@
   var minutesAway = "";
 
 
-  db.ref().on("value", function(snapshot){
-    console.log(snapshot.val());
+ firebase.database().ref().on("value", function(snapshot){
   })  
 
   $('#submit').on("click", function(){
     trainName = $('#nameinput').val().trim();
-    destination = $('#firsttimeinput').val().trim();
+    destination = $('#destinationinput').val().trim();
     frequency = $('#frequencyinput').val().trim();
-    arrivalTime = $('#arrivalinput').val().trim();
+    arrivalTime = $('#firsttimeinput').val().trim();
     minutesAway = $('#minutesinput').val().trim();
   
-    db.ref().set({
-      trainName: trainName
+    firebase.database().ref().push({
+      trainName: trainName,
+      destination: destination,
+      frequency: frequency,
+      arrivalTime: arrivalTime,
+      minutesAway: minutesAway,
+      dateAdded: firebase.database.ServerValue.TIMESTAMP,
     });
 
     return false;
   });
 
-  db.ref().on("value", function(snapshot) {
-  console.log(snapshot.val());
-  console.log(snapshot.val().trainName);
+  firebase.database().ref().orderByChild("dateAdded").limitToLast(10).on("child_added", function(snapshot) {
+    console.log(snapshot.val().trainName);
+    console.log(snapshot.val().destination);
+    console.log(snapshot.val().frequency);
+    console.log(snapshot.val().arrivalTime);
+    console.log(snapshot.val().minutesAway);
+    
+    // Change the HTML to reflect
+    $("#name-display").html(snapshot.val().name);
+    $("#email-display").html(snapshot.val().email);
+    $("#age-display").html(snapshot.val().age);
+    $("#comment-display").html(snapshot.val().comment);
 
-  })
+    })
 
- 
+  // $(#display).html(<td>)
 
